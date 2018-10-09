@@ -1,9 +1,32 @@
 {
-  "name": "react-native-rave",
-  "main": "Rave.js",
-  "version": "0.0.7",
-  "author": "Oluwole Adebiyi, Tofunmi Kupoluyi",
-  "license": "MIT",
+  "_from": "react-native-rave@0.0.7",
+  "_id": "react-native-rave@0.0.7",
+  "_inBundle": false,
+  "_integrity": "sha512-dgETOLq8eLfAPQzhNOPrOiU+WZenv44wKn1S8LuVE2rwtuJT+NgXUVtmf9eZnEBiRBODHCH9zC2lNH2FZJvhSA==",
+  "_location": "/react-native-rave",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-native-rave@0.0.7",
+    "name": "react-native-rave",
+    "escapedName": "react-native-rave",
+    "rawSpec": "0.0.7",
+    "saveSpec": null,
+    "fetchSpec": "0.0.7"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-rave/-/react-native-rave-0.0.7.tgz",
+  "_shasum": "c0330f303388d6122f5164d659b0e3acba30c2c7",
+  "_spec": "react-native-rave@0.0.7",
+  "_where": "C:\\Users\\JOLLY\\GitRepos\\RaveReactApp",
+  "author": {
+    "name": "Oluwole Adebiyi, Tofunmi Kupoluyi"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "axios": "^0.18.0",
     "card-validator": "^5.0.0",
@@ -15,5 +38,11 @@
     "react": "16.3.1",
     "react-native": "~0.55.2",
     "react-native-keyboard-aware-scroll-view": "^0.6.0"
-  }
+  },
+  "deprecated": false,
+  "description": "<img src=\"https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png\" style=\"text-align: center;max-height: 400;\">",
+  "license": "MIT",
+  "main": "Rave.js",
+  "name": "react-native-rave",
+  "version": "0.0.7"
 }
