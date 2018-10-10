@@ -87,7 +87,7 @@ export default class index extends Component {
           }else {
              Alert.alert(
               '',
-              'Transaction Not Successful',
+              'Transaction Pending Validation',
               [{
                 text: 'Retry',
                 onPress: () => this.setState({

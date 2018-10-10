@@ -9,7 +9,7 @@ export default class index extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {banks: [], accountbank: '', accountnumber: '', phonenumber: (this.props.phone == null) ? '' : this.props.phone, status: "", chargeResponseMessage: '', accountbankErr: 'none', accountnumberErr: 'none', phonenumberErr: 'none', otp: "", flwRef: "", loading: false};
+    this.state = {banks: [], bankNotSupportedErr: 'none', accountbank: '', accountnumber: '', phonenumber: (this.props.phone == null) ? '' : this.props.phone, status: "", chargeResponseMessage: '', accountbankErr: 'none', accountnumberErr: 'none', phonenumberErr: 'none', otp: "", flwRef: "", loading: false};
 
     this.pay = this.pay.bind(this);
     this.check = this.check.bind(this);
@@ -48,33 +48,22 @@ export default class index extends Component {
    // Performs a check on the state of the accountbank, accountnumber and phone number fields are filled as required and at not lesser than the required length
   check() {
     this.setState({
-      accountbankErr: 'none', accountnumberErr: 'none', phonenumberErr: 'none'
+      accountbankErr: 'none', accountnumberErr: 'none', phonenumberErr: 'none', bankNotSupportedErr: 'none'
     })
 
-    if (this.state.accountbank.length < 2 || this.state.accountnumber.length < 5 || this.state.phonenumber.length < 3) {
-
-      if (this.state.accountbank < 2) {
-        this.setState({
-          accountbankErr: 'flex'
-        })
-      }
-
-      if (this.state.accountnumber.length < 5 && this.state.accountbank === "057") {
-        this.setState({
-          accountnumberErr: 'flex'
-        })
-      }else {
-        this.setState({
-          accountnumberErr: 'none'
-        })
-        return true
-      }
-
-      if (this.state.phonenumber.length < 3) {
-        this.setState({
-          phonenumberErr: 'flex'
-        })
-      }
+    // if (this.state.accountbank.length < 2 || this.state.accountnumber.length < 5 || this.state.phonenumber.length < 3) {
+    if (this.state.phonenumber.length < 3) {
+      this.setState({
+        phonenumberErr: 'flex'
+      })
+    }else if (this.state.accountbank < 2) {
+      this.setState({
+        accountbankErr: 'flex'
+      })
+    }else if (this.state.accountnumber.length < 5 && this.state.accountbank === "057") {
+      this.setState({
+        accountnumberErr: 'flex'
+      })
     }else if (this.state.accountbank === "058" || this.state.accountbank === "057") {
       if (Number(this.props.amount) < 10 ) {
         Alert.alert(
@@ -91,6 +80,10 @@ export default class index extends Component {
       } else {
         return true
       }
+    } else if (this.state.accountbank !== "058" && this.state.accountbank !== "057") {
+      this.setState({
+        bankNotSupportedErr: 'flex'
+      })
     } else {
       return true
     }
@@ -335,6 +328,7 @@ export default class index extends Component {
                 </Picker>
               </View>
               <Text style={{ color: '#EE312A', fontSize: 10, display: this.state.accountbankErr, fontWeight: 'bold', marginTop: 5 }}>Choose a bank</Text>
+              <Text style={{ color: '#EE312A', fontSize: 10, display: this.state.bankNotSupportedErr, fontWeight: 'bold', marginTop: 5 }}>Bank Currently Not Supported</Text>
             </View>
             
             {zenith}
