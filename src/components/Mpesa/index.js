@@ -63,18 +63,17 @@ export default class index extends Component {
 
     this.props.rave.initiatecharge(payload).then((res) => {
       // Check for charge status from the charge response
-      if (res.data.status === "pending") {
+      if (res.data.status.toUpperCase() === "SUCCESSFUL") {
         this.setState({
           loading: false
         })
         // verify the status of the response if it is successful by passing the transaction response from the initial charge to the verify endpoint
         this.props.rave.verifyTransaction(res.data.txRef).then((resp) => {
           this.props.onSuccess(resp);
-                console.log(resp);
           if (resp.data.status.toUpperCase() === "SUCCESSFUL" && resp.data.currency === "KES"){
             Alert.alert(
               '',
-              'Transaction Successful',
+              chargemessage,
               [{
                   text: 'Ok',
                   onPress: () => this.setState({
@@ -88,7 +87,7 @@ export default class index extends Component {
           }else {
              Alert.alert(
               '',
-              'Transaction Pending Validation',
+              resp.data.chargemessage,
               [{
                 text: 'Retry',
                 onPress: () => this.setState({
@@ -102,6 +101,32 @@ export default class index extends Component {
         }).catch((error) => {
           this.props.onFailure(error);
         })
+      }else if (res.data.status.toUpperCase() === "PENDING" &&  res.data.currency === "KES") {
+        Alert.alert(
+          '',
+          'Transaction ' + res.data.status + 'validation',
+          [{
+            text: 'Retry',
+            onPress: () => this.setState({
+              loading: false
+            })
+          }, ], {
+            cancelable: false
+          }
+        )
+      }else {
+        Alert.alert(
+          '',
+          'KES Transaction only is allowed',
+          [{
+            text: 'Retry',
+            onPress: () => this.setState({
+              loading: false
+            })
+          }, ], {
+            cancelable: false
+          }
+        )
       }
     }).catch((e) => {
       this.setState({
