@@ -70,6 +70,7 @@ export default class index extends Component {
         // verify the status of the response if it is successful by passing the transaction response from the initial charge to the verify endpoint
         this.props.rave.verifyTransaction(res.data.txRef).then((resp) => {
           this.props.onSuccess(resp);
+                console.log(resp);
           if (resp.data.status.toUpperCase() === "SUCCESSFUL" && resp.data.currency === "KES"){
             Alert.alert(
               '',
