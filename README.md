@@ -61,7 +61,7 @@ import Rave from 'react-native-rave';
 
 ### 3. Use the rave component with any of the payment props options displayed below
 
-#### `Card Payments`
+### `Card Payments`
 
 To process card transactions, use this payment props
 
@@ -88,7 +88,7 @@ render() {
 }
 ```
 
-#### `Account Payments`
+### `Account Payments`
 
 To process account payments, use this payment props option.
 
@@ -114,7 +114,7 @@ render() {
   );
 }
 ```
-#### `Mpesa`
+### `Mpesa`
 
 To process mpesa transactions, use this payment props option.
 
@@ -142,7 +142,7 @@ render() {
   );
 }
 ```
-#### `Ghana Mobile Money`
+### `Ghana Mobile Money`
 
 To process ghana mobile money transactions, use this payment props option.
 
@@ -199,4 +199,5 @@ render() {
 | production      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
 | redirect_url      |   Set your webhook url here if you want rave to send you webhook request to the provided webhook url to check the transaction status when a customer completes a transaction  | `String` | Required for Mpesa and Ghana Mobile Money ('defaults to false')
 | meta      |  This is additional information that can be sent to the server eg [{ metaname: "color", metavalue: "red" }, { metaname: "storelocation", metavalue: "ikeja" }]  | `Array of Objects` | Not Required
+
 
