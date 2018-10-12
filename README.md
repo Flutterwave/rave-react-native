@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png" style="text-align: center;max-height: 400;" alt="Rave React Native App">
 
-<img src="https://raw.githubusercontent.com/MaestroJolly/Rave-React-Native-Component/master/img/GhMoney-Mpesa.png" style="text-align: center;max-height: 400;" alt="Mobile Money and Mpesa">
+<img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/GhMoney-Mpesa.png" style="text-align: center;max-height: 400;" alt="Mobile Money and Mpesa">
 
 
 > Implement Rave By Flutterwave easily with React Native
