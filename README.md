@@ -172,9 +172,9 @@ render() {
 }
 ```
 
-#### `USSD Payments`
+### `USSD Payments`
 
-`Note:` This is still in development.
+`Note:` Currently Unavailable.
 
 ## Parameters Table
 
