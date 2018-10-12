@@ -37,7 +37,7 @@ export default class Rave extends React.Component {
     let page;
     let header = <View></View>;
 
-    if (this.props.paymenttype == 'multiple') {
+    if (this.props.paymenttype == 'both') {
       header = <CardAccountHeader page={this.getPage} />;
       if (this.state.page == "card") {
         page = <Card rave={this.rave} primarycolor={this.props.primarycolor} secondarycolor={this.props.secondarycolor} amount={this.props.amount} currency={this.props.currency} onSuccess={res => this.props.onSuccess(res)} onFailure={e => this.props.onFailure(e)} />;
@@ -102,7 +102,7 @@ Rave.propTypes = {
   redirect_url: PropTypes.string,
   primarycolor: PropTypes.string,
   secondarycolor: PropTypes.string, 
-  paymenttype: PropTypes.string,
+  paymenttype: PropTypes.string.isRequired,
   production: PropTypes.bool,
   meta: PropTypes.array,
   page: PropTypes.string
@@ -118,7 +118,7 @@ Rave.defaultProps = {
   txref: transactionReference,
   primarycolor: '#F5A623',
   secondarycolor: '#12122D',
-  paymenttype: 'multiple',
+  paymenttype: 'both',
   production: false,
   meta: [],
   page: "card"
