@@ -178,7 +178,7 @@ render() {
 | props        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
 | publickey      |  This is the publickey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard | `String` | Required
-| secretkey      |  This is the secretkey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test]
+| secretkey      |  This is the secretkey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test] (https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard
 | amount      |  This is the amount to be charged from card/account | `String` | Required
 | email      |  This is the email of the customer | `String` | Required
 | phone      |  This is the phone number of the customer | `String` | Not Required
