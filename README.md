@@ -1,29 +1,15 @@
 # Rave By Flutterwave React Native Component
-This is the react native SDK for [Rave By Flutterwave.](https://rave.flutterwave.com)
 
-## Table Of Content
+<img src="https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png" style="text-align: center;max-height: 400;">
 
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Deployment](#deployment)
-- [Payment Options](#payment-options)
-- [Usage](#usage)
-- [Parameters Table](#parameters-table)
+> Implement Rave By Flutterwave easily with React Native
 
-## Getting Started
-
-### Prerequisites
-
-> Next you need to have `Node` and `npm` downloaded and installed on your machine.
-
-- [Click Here](https://nodejs.org/en/) to download and install `Node` to your machine, `npm` is always automatically installed when you install `Node`.
-
-- To ensure you have `Node` and `npm` installed, enter the following command into your terminal/command prompt `node -v` and `npm -v` respectively.
-
+- Go to [Flutterwave Rave Live](https://rave.flutterwave.com/dashboard/settings/apis) to get your **`LIVE`** public and private key
+- Go to [Flutterwave Rave Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) to get your **`TEST`** public and private key
 
 ## Installation
 
-[Yarn](https://yarnpkg.com/en/docs/install) or [Node](https://nodejs.org/en/)
+[Yarn](https://yarnpkg.com/lang/en/docs/install/) or [Node](https://nodejs.org/en/)
 
 You can pull in react-native-rave via npm:
 
@@ -33,19 +19,7 @@ You can pull in react-native-rave via npm:
 
 > yarn add react-native-rave
 
-`Note:` To use yarn on your machine [click here](https://yarnpkg.com/en/docs/install)
-
-## Deployment
-
-> To Implement Rave By Flutterwave easily with React Native
-
-- Go to [Flutterwave Rave Live](https://rave.flutterwave.com/dashboard/settings/apis) to get your **`LIVE`** public and private key
-- Go to [Flutterwave Rave Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) to get your **`TEST`** public and private key
-
-
-## Payment Options
-
-<img src="https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png" style="text-align: center;max-height: 400;">
+## Payment Types
 
 ### The payment option includes:
 - Card Payments
@@ -84,7 +58,7 @@ import Rave from 'react-native-rave';
 
 ### 3. Use the rave component with any of the payment props options displayed below
 
-#### Card Payments
+#### `Card Payments`
 
 To process card transactions, use this payment props
 
@@ -111,7 +85,7 @@ render() {
 }
 ```
 
-#### Account Payments
+#### `Account Payments`
 
 To process account payments, use this payment props option.
 
@@ -137,7 +111,7 @@ render() {
   );
 }
 ```
-#### Mpesa
+#### `Mpesa`
 
 To process mpesa transactions, use this payment props option.
 
@@ -165,7 +139,7 @@ render() {
   );
 }
 ```
-#### Ghana Mobile Money
+#### `Ghana Mobile Money`
 
 To process ghana mobile money transactions, use this payment props option.
 
@@ -195,7 +169,7 @@ render() {
 }
 ```
 
-#### USSD Payments
+#### `USSD Payments`
 
 `Note:` This is still in development.
 
@@ -217,7 +191,7 @@ render() {
 | txref      |  This is a unique reference for the transaction | `String` | Not Required (will be generated automatically)
 | primarycolor      |  This is to override the primary colour of the component | `String` | Not Required
 | secondarycolor      |  This is to override the secondary colour of the component | `String` | Not Required
-| paymenttype      |  This is the payment type ['both','card', 'account', 'mpesa', 'mobilemoneygh'] | `String` | Required ('if non set, it sets a default payment type to both')
+| paymenttype      |  This is the payment type ['both','card', 'account', 'mpesa', 'mobilemoneygh'] | `String` | Required ('if non set, it sets a default payment type to multiple')
 | page      |  This sets the current state of payment page based on the payment type currently implemented ['both','card', 'account', 'mpesa', 'mobilemoneygh']  | `String` | Required ('If no value is set, card page is set by default')
 | production      |   Set to `true` if you want your transactions to run in the production environment otherwise set to `false`. Defaults to false  | `Boolean` | Not Required ('defaults to false')
 | redirect_url      |   Set your webhook url here if you want rave to send you webhook request to the provided webhook url to check the transaction status when a customer completes a transaction  | `String` | Required for Mpesa and Ghana Mobile Money ('defaults to false')

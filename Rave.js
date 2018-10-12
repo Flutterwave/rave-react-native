@@ -12,7 +12,7 @@ import Ussd from './src/components/Ussd';
 import RavePayment from './library/RavePayment';
 import RaveMpesa from './library/RaveMpesa';
 import RaveUssd from './library/RaveUssd';
-import RaveMmoney from 'react-native-rave/library/RaveMmoney';
+import RaveMmoney from './library/RaveMmoney';
 
 
 export default class Rave extends React.Component {
@@ -37,7 +37,7 @@ export default class Rave extends React.Component {
     let page;
     let header = <View></View>;
 
-    if (this.props.paymenttype == 'both') {
+    if (this.props.paymenttype == 'multiple') {
       header = <CardAccountHeader page={this.getPage} />;
       if (this.state.page == "card") {
         page = <Card rave={this.rave} primarycolor={this.props.primarycolor} secondarycolor={this.props.secondarycolor} amount={this.props.amount} currency={this.props.currency} onSuccess={res => this.props.onSuccess(res)} onFailure={e => this.props.onFailure(e)} />;
@@ -118,7 +118,7 @@ Rave.defaultProps = {
   txref: transactionReference,
   primarycolor: '#F5A623',
   secondarycolor: '#12122D',
-  paymenttype: 'both',
+  paymenttype: 'multiple',
   production: false,
   meta: [],
   page: "card"
