@@ -73,7 +73,7 @@ export default class index extends Component {
           if (resp.data.status.toUpperCase() === "SUCCESSFUL" && resp.data.currency === "KES"){
             Alert.alert(
               '',
-              chargemessage,
+              resp.data.chargemessage,
               [{
                   text: 'Ok',
                   onPress: () => this.setState({
@@ -104,9 +104,9 @@ export default class index extends Component {
       }else if (res.data.status.toUpperCase() === "PENDING" &&  res.data.currency === "KES") {
         Alert.alert(
           '',
-          'Transaction ' + res.data.status + 'validation',
+          'Transaction ' + res.data.status + ' validation',
           [{
-            text: 'Retry',
+            text: 'Ok',
             onPress: () => this.setState({
               loading: false
             })

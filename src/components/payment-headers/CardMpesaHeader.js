@@ -26,25 +26,18 @@ export default class CardMpesaHeader extends Component {
 
 
   render() {
+
     return (
       <View>
         {/* <Header /> */}
         <View style={styles.container}>
           <View style={styles.nav}>
-            <TouchableOpacity
-              style={{
-                width: '49.5%'}}
-                onPress={this.switchToCard}>
+            <TouchableOpacity style={{width: '49.5%'}} onPress={this.switchToCard}>
               <Text style={{ fontSize: 16, textAlign: 'center', paddingVertical: 15, color: this.props.secondarycolor, fontWeight: (this.state.page == "card") ? "bold" : "normal", borderBottomColor: this.props.secondarycolor, borderBottomWidth: (this.state.page == "card") ? 2 : 1}}>Card</Text>
             </TouchableOpacity>
             <View style={{ width: '1%', marginVertical: 10, borderRightWidth: 1, borderRightColor: this.props.secondarycolor }}></View>
-            <TouchableOpacity
-
-              style={{
-                width: '49.5%'
-              }}
-              onPress={this.switchToMpesa}>
-              <Text style={{ fontSize: 16, textAlign: 'center', paddingVertical: 15, color: this.props.secondarycolor, fontWeight: (this.state.page == "mpesa") ? "bold" : "normal", borderBottomColor:this.props.secondarycolor, borderBottomWidth: (this.state.page == "mpesa") ? 2 : 1 }}>Mpesa</Text>
+            <TouchableOpacity style={{width: '49.5%'}}onPress={this.switchToMpesa}>
+                <Text style={{ fontSize: 16, textAlign: 'center', paddingVertical: 15, color: this.props.secondarycolor, fontWeight: (this.state.page == "mpesa") ? "bold" : "normal", borderBottomColor:this.props.secondarycolor, borderBottomWidth: (this.state.page == "mpesa") ? 2 : 1 }}>Mpesa</Text>
             </TouchableOpacity>
           </View>
         </View>
