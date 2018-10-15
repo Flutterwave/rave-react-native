@@ -1,44 +1,17 @@
 {
-  "_from": "react-native-rave@0.0.7",
-  "_id": "react-native-rave@0.0.7",
-  "_inBundle": false,
-  "_integrity": "sha512-dgETOLq8eLfAPQzhNOPrOiU+WZenv44wKn1S8LuVE2rwtuJT+NgXUVtmf9eZnEBiRBODHCH9zC2lNH2FZJvhSA==",
-  "_location": "/react-native-rave",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "react-native-rave@0.0.7",
-    "name": "react-native-rave",
-    "escapedName": "react-native-rave",
-    "rawSpec": "0.0.7",
-    "saveSpec": null,
-    "fetchSpec": "0.0.7"
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "author": {
-    "name": "Oluwole Adebiyi, Tofunmi Kupoluyi"
-  },
-  "bundleDependencies": false,
   "dependencies": {
-    "axios": "^0.18.0",
-    "card-validator": "^5.0.0",
-    "dateformat": "^3.0.3",
-    "md5": "^2.2.1",
-    "native-base": "^2.7.2",
-    "node-forge": "^0.7.5",
-    "prop-types": "^15.6.2",
+    "expo": "^30.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
-    "react-native-keyboard-aware-scroll-view": "^0.6.0"
-  },
-  "deprecated": false,
-  "description": "<img src=\"https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png\" style=\"text-align: center;max-height: 400;\">",
-  "license": "MIT",
-  "main": "Rave.js",
-  "name": "react-native-rave",
-  "version": "0.0.7"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-rave": "0.0.8"
+  }
 }
