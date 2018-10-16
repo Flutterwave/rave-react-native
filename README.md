@@ -1,18 +1,32 @@
 # Rave By Flutterwave React Native Component
+This is the react native SDK for [Rave By Flutterwave.](https://rave.flutterwave.com)
 
-<img src="https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png" style="text-align: center;max-height: 400;" alt="Rave React Native App">
+<img src="https://raw.githubusercontent.com/kingflamez/Rave-React-Native-Component/master/img/rnapp.png" style="text-align: center; max-height: 400;" alt="Rave React Native App">
 
-<img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/GhMoney-Mpesa.png" style="text-align: center;max-height: 400;" alt="Mobile Money and Mpesa">
+<img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/GhMoney-Mpesa.png" style="text-align: center; max-height: 400;" alt="Mobile Money and Mpesa">
 
+## Table Of Content
 
-> Implement Rave By Flutterwave easily with React Native
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Deployment](#deployment)
+- [Payment Options](#payment-options)
+- [Usage](#usage)
+- [Parameters Table](#parameters-table)
 
-- Go to [Flutterwave Rave Live](https://rave.flutterwave.com/dashboard/settings/apis) to get your **`LIVE`** public and private key
-- Go to [Flutterwave Rave Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) to get your **`TEST`** public and private key
+## Getting Started
+
+### Prerequisites
+
+> Next you need to have `Node` and `npm` downloaded and installed on your machine.
+
+- [Click Here](https://nodejs.org/en/) to download and install `Node` to your machine, `npm` is always automatically installed when you install `Node`.
+
+- To ensure you have `Node` and `npm` installed, enter the following command into your terminal/command prompt `node -v` and `npm -v` respectively.
 
 ## Installation
 
-[Yarn](https://yarnpkg.com/lang/en/docs/install/) or [Node](https://nodejs.org/en/)
+[Yarn](https://yarnpkg.com/en/docs/install) or [Node](https://nodejs.org/en/)
 
 You can pull in react-native-rave via npm:
 
@@ -22,7 +36,15 @@ You can pull in react-native-rave via npm:
 
 > yarn add react-native-rave
 
-## Payment Types
+`Note:` To use yarn on your machine [click here](https://yarnpkg.com/en/docs/install)
+
+## Deployment
+
+> To Implement Rave By Flutterwave easily with React Native
+
+- Go to [Flutterwave Rave Live](https://rave.flutterwave.com/dashboard/settings/apis) to get your **`LIVE`** public and private key
+- Go to [Flutterwave Rave Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) to get your **`TEST`** public and private key
+
 
 ### The payment option includes:
 - Card Payments
@@ -61,7 +83,7 @@ import Rave from 'react-native-rave';
 
 ### 3. Use the rave component with any of the payment props options displayed below
 
-### `Card Payments`
+#### Card Payments
 
 To process card transactions, use this payment props
 
@@ -77,7 +99,7 @@ render() {
         lastname="Adebiyi" 
         publickey="FLWPUBK-**************************-X" 
         secretkey="FLWSECK-**************************-X"
-        paymenttype="card"
+        paymenttype="card" // or set to both for card and account transactions
         page="card"
         meta={[{ metaname: "color", metavalue: "red" }, { metaname: "storelocation", metavalue: "ikeja" }]}
         production={false} 
@@ -88,7 +110,7 @@ render() {
 }
 ```
 
-### `Account Payments`
+#### Account Payments
 
 To process account payments, use this payment props option.
 
@@ -104,7 +126,7 @@ render() {
         lastname="Adebiyi" 
         publickey="FLWPUBK-**************************-X" 
         secretkey="FLWSECK-**************************-X"
-        paymenttype="account"
+        paymenttype="account" // or set to both for card and account transactions
         page="card"
         meta={[{ metaname: "color", metavalue: "red" }, { metaname: "storelocation", metavalue: "ikeja" }]}
         production={false} 
@@ -114,7 +136,7 @@ render() {
   );
 }
 ```
-### `Mpesa`
+#### Mpesa
 
 To process mpesa transactions, use this payment props option.
 
@@ -132,7 +154,7 @@ render() {
         lastname="Adebiyi" 
         publickey="FLWPUBK-**************************-X" 
         secretkey="FLWSECK-**************************-X"
-        paymenttype="mpesa"
+        paymenttype="mpesa" // or set to both for card and mpesa transactions
         page="mpesa"
         meta={[{ metaname: "color", metavalue: "red" }, { metaname: "storelocation", metavalue: "ikeja" }]}
         production={false} 
@@ -142,7 +164,7 @@ render() {
   );
 }
 ```
-### `Ghana Mobile Money`
+#### Ghana Mobile Money
 
 To process ghana mobile money transactions, use this payment props option.
 
@@ -161,7 +183,7 @@ render() {
         publickey="FLWPUBK-**************************-X" 
         secretkey="FLWSECK-**************************-X"
         redirect_url = "https://rave-webhook.herokuapp.com/receivepayment"
-        paymenttype="mobilemoneygh"
+        paymenttype="mobilemoneygh" // or set to both for card and mobile money transactions
         page="mobilemoneygh"
         meta={[{ metaname: "color", metavalue: "red" }, { metaname: "storelocation", metavalue: "ikeja" }]}
         production={false} 
@@ -172,16 +194,16 @@ render() {
 }
 ```
 
-### `USSD Payments`
+#### USSD Payments
 
-`Note:` Currently Unavailable.
+`Note:` This is still in development.
 
 ## Parameters Table
 
 | props        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
 | publickey      |  This is the publickey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard | `String` | Required
-| secretkey      |  This is the secretkey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) dashboard
+| secretkey      |  This is the secretkey gotten from your [Live](https://rave.flutterwave.com/dashboard/settings/apis) or [Test]
 | amount      |  This is the amount to be charged from card/account | `String` | Required
 | email      |  This is the email of the customer | `String` | Required
 | phone      |  This is the phone number of the customer | `String` | Not Required
