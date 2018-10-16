@@ -8,6 +8,7 @@ This is the react native SDK for [Rave By Flutterwave.](https://rave.flutterwave
 ## Table Of Content
 
 - [Getting Started](#getting-started)
+- [How It Works](#how-it-works)
 - [Installation](#installation)
 - [Deployment](#deployment)
 - [Payment Options](#payment-options)
@@ -18,13 +19,41 @@ This is the react native SDK for [Rave By Flutterwave.](https://rave.flutterwave
 
 ### Prerequisites
 
-> Next you need to have `Node` and `npm` downloaded and installed on your machine.
+- [Rave Test Public And Private Keys](https://ravesandbox.flutterwave.com/dashboard/settings/apis)
+- [Rave Live Public And Private Keys](https://rave.flutterwave.com/dashboard/settings/apis)
+- [Node](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/get-npm)
+- [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
+
+
+## Installations
+
+> To use rave react native SDK in your application, you need to have `Node` and `npm` downloaded and installed on your machine.
 
 - [Click Here](https://nodejs.org/en/) to download and install `Node` to your machine, `npm` is always automatically installed when you install `Node`.
 
 - To ensure you have `Node` and `npm` installed, enter the following command into your terminal/command prompt `node -v` and `npm -v` respectively.
 
-## Installation
+- To install `react native` on your machine you can use `npm install -g expo-cli` to install the [Expo CLI](https://expo.io/) command line utility to get you started quickly or use this command `npm install -g react-native-cli` to install the [react native CLI](https://facebook.github.io/react-native/docs/getting-started.html).
+
+## How It Works
+
+This is a simple demonstration of how to set up rave react native SDK for your app.
+
+To set up rave react native SDK into your application, follow the process below;
+
+- Using the [Expo CLI](https://expo.io/) command line utility, enter the following:
+  - `expo init AwesomeProject`
+  - `cd AwesomeProject`
+  - `npm start`
+
+- You should get this from your terminal:
+
+  <img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/expo-barcode.PNG" style="text-align: center; max-height: 250;" alt="Expo Terminal Image">
+
+- Install the Expo client or mobile application from [Apple Store](https://itunes.apple.com/app/apple-store/id982107779) or [Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+
+
 
 [Yarn](https://yarnpkg.com/en/docs/install) or [Node](https://nodejs.org/en/)
 
@@ -45,6 +74,8 @@ You can pull in react-native-rave via npm:
 - Go to [Flutterwave Rave Live](https://rave.flutterwave.com/dashboard/settings/apis) to get your **`LIVE`** public and private key
 - Go to [Flutterwave Rave Test](https://ravesandbox.flutterwave.com/dashboard/settings/apis) to get your **`TEST`** public and private key
 
+
+## Payment Options
 
 ### The payment option includes:
 - Card Payments
