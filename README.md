@@ -49,7 +49,7 @@ To set up rave react native SDK into your application, follow the process below;
 
 - You should get this from your terminal:
 
-  <img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/expo-barcode.PNG" style="text-align: center; max-height: 250;" alt="Expo Terminal Image">
+  <img src="https://github.com/MaestroJolly/rave-react-native/blob/master/img/expo-barcode.PNG" style="text-align: center; max-height: 150;" alt="Expo Terminal Image">
 
 - Install the Expo client or mobile application from [Apple Store](https://itunes.apple.com/app/apple-store/id982107779) or [Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
 
