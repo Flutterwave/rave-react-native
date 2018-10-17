@@ -187,6 +187,23 @@ export default class index extends Component {
         })
         this.props.rave.verifyTransaction(res.data.txRef).then((resp) => {
           this.props.onSuccess(resp);
+          if (resp.data.status.toUpperCase() === "SUCCESSFUL" && resp.data.chargecode === "00") {
+            Alert.alert(
+              '',
+              'Transaction Successful',
+              [{
+                text: 'Ok',
+                onPress: () => this.setState({
+                  loading: false,
+                  "accountbank": "", // get the bank code from the bank list endpoint.
+                  "phonenumber": "",
+                  "dob": ""
+                })
+              }, ], {
+                cancelable: false
+              }
+            )
+          }
         }).catch((error) => {
           this.props.onFailure(error);
         })
@@ -198,6 +215,22 @@ export default class index extends Component {
           loading: true,
           chargeResponseMessage: (res.data.validateInstruction) ? res.data.validateInstruction : 'Please validate with the OTP sent to your mobile or email'
         })
+        Alert.alert(
+          '',
+          'Transaction in process\n' + res.data.validateInstruction,
+          [{
+            text: 'Ok',
+            onPress: () => this.setState({
+              loading: false,
+              "accountbank": "", // get the bank code from the bank list endpoint.
+              "accountnumber": "",
+              "phonenumber": "",
+              "dob": ""
+            })
+          }, ], {
+            cancelable: false
+          }
+        )
       } else {
         this.setState({ vbvModal: true, vbvurl: res.data.authurl });
       }
@@ -224,7 +257,7 @@ export default class index extends Component {
 
         Alert.alert(
           '',
-          'You will be charged a total of' + this.props.currency + resp.data.charge_amount + '. Do you want to continue?',
+          'You will be charged a total of ' + this.props.currency + resp.data.charge_amount + ' . Do you want to continue?',
           [
             {
               text: 'Cancel', onPress: () => this.setState({
@@ -346,7 +379,7 @@ export default class index extends Component {
             </View>
 
             <View style={styles.formGroup}>
-              <Text style={styles.label}>Bank</Text>
+              <Text style={styles.label}>Account Bank</Text>
               <View style={styles.input}>
                 <Picker
                   mode="dropdown"

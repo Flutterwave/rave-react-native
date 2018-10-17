@@ -113,7 +113,6 @@ export default class index extends Component {
 
     //validate with otp
     this.props.rave.validate({ transaction_reference: this.state.flwRef, otp: this.state.otp }).then((res) => {
-      
       if (res.data.tx.status.toUpperCase() === "SUCCESSFUL") {
         this.setState({
           loading: false
@@ -122,6 +121,43 @@ export default class index extends Component {
         this.props.rave.verifyTransaction(res.data.tx.txRef).then((resp) => {
           this.setState({ cardno: '', cvv: '', expirymonth: '', expiryyear: '' })
           this.props.onSuccess(resp);
+           if (resp.data.status.toUpperCase() === "SUCCESSFUL" && resp.data.chargecode === "00") {
+             Alert.alert(
+               '',
+               'Transaction Successful',
+               [{
+                 text: 'Ok',
+                 onPress: () => this.setState({
+                   loading: false,
+                   flwRef: res.data.flwRef,
+                   cardno: '',
+                   cvv: '',
+                   expirymonth: '',
+                   expiryyear: ''
+                 })
+               }, ], {
+                 cancelable: false
+               }
+             )
+           } else {
+             Alert.alert(
+               '',
+               'Transaction Not Successful\n' + resp.data.chargemessage,
+               [{
+                 text: 'Ok',
+                 onPress: () => this.setState({
+                   loading: false,
+                   flwRef: res.data.flwRef,
+                   cardno: '',
+                   cvv: '',
+                   expirymonth: '',
+                   expiryyear: ''
+                 })
+               }, ], {
+                 cancelable: false
+               }
+             )
+           }
         }).catch((error) => {
           this.props.onFailure(error);
         })
@@ -271,7 +307,6 @@ export default class index extends Component {
               cardno: '', cvv: '', expirymonth: '', expiryyear: ''
             })
             this.props.onSuccess(resp);
-
           }).catch((error) => {
             this.props.onFailure(error);
           })
@@ -322,7 +357,7 @@ export default class index extends Component {
 
         Alert.alert(
           '',
-          'You will be charged a total of' + this.props.currency + resp.data.charge_amount + '. Do you want to continue?',
+          'You will be charged a total of ' + this.props.currency + resp.data.charge_amount + '. Do you want to continue?',
           [
             {
               text: 'Cancel', onPress: () => this.setState({
