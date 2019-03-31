@@ -1051,7 +1051,6 @@ export default class index extends Component {
                   <View style={[styles.input, { borderBottomRightRadius: 3 }]}>
                     <View
                       style={{
-                        fontSize: 16,
                         flexDirection: "row",
                         justifyContent: "space-between"
                       }}
@@ -1090,8 +1089,6 @@ export default class index extends Component {
 
           <View
             style={{
-              color: "#4a4a4a",
-              fontSize: 16,
               marginTop: 55,
               marginLeft: 0
             }}
