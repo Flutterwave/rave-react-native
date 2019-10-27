@@ -175,7 +175,7 @@ export default class index extends Component {
                     this.props.onSuccess(res);
                     Alert.alert(
                       "",
-                      "Transaction Proccessing",
+                      "Transaction Processing",
                       [
                         {
                           text: "Ok",

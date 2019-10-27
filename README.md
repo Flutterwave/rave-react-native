@@ -718,7 +718,7 @@ const styles = StyleSheet.create({
     <img src="https://res.cloudinary.com/flutterwavedeveloper/image/upload/v1540752764/rave-react-native/env-variable.png" style="max-height: 400;" alt="Environment variable settings">
   </p>
 
-  - Next copy the ngrok file path and add it to the enviroment variable by selecting the path option and clicking on the edit option like this: 
+  - Next copy the ngrok file path and add it to the environment variable by selecting the path option and clicking on the edit option like this: 
 
   <p align="center">
     <img src="https://res.cloudinary.com/flutterwavedeveloper/image/upload/v1540752764/rave-react-native/ngrok-settings.png" style="max-height: 400;" alt="Adding ngrok to the environment variable">
