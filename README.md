@@ -179,7 +179,7 @@ render() {
 
 ### Mpesa
 
-`Note:` Rave allows merchants to set payment method to Mpesa only by setting paymentOption to mpsesa, only the mpesa payment option would be available. Merchants can also set paymentOption to card,mpsesa in order to accept both card and Mpsesa as payment methods. 
+`Note:` Rave allows merchants to set payment method to Mpesa only by setting paymentOption to Mpesa, only the mpesa payment option would be available. Merchants can also set paymentOption to card,Mpesa in order to accept both card and Mpesa as payment methods. 
 
 `Note:` Leaving paymentOption empty sets the default payment method to card only.
 
