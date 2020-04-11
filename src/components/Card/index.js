@@ -10,8 +10,9 @@ import {
   TouchableOpacity,
   Image,
   Platform,
-  WebView
 } from "react-native";
+
+import { WebView } from 'react-native-webview';
 
 //Scrollable view Library
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -79,16 +80,16 @@ export default class index extends Component {
 
   // Makes the card input appear in 4-digit interval apart from VERVE cards eg 4242 4242 4242 4242 instead of 4242424242424242
   cc_format(value) {
-    var v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-    var matches = v.match(/\d{4,16}/g);
-    var match = (matches && matches[0]) || "";
-    var parts = [];
+    const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    const matches = v.match(/\d{4,16}/g);
+    const match = (matches && matches[0]) || "";
+    const parts = [];
     if (value.replace(/\s/g, "").replace(/[^0-9]/gi, "").length > 16) {
       this.setState({
         cardno: value.replace(/\s/g, "").replace(/[^0-9]/gi, "")
       });
     } else {
-      for (i = 0, len = match.length; i < len; i += 4) {
+      for (let i = 0, len = match.length; i < len; i += 4) {
         parts.push(match.substring(i, i + 4));
       }
       if (parts.length) {

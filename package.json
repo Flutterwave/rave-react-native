@@ -20,6 +20,7 @@
     "react-native": "~0.55.2",
     "react-native-elements": "^1.1.0",
     "react-navigation": "^3.0.9",
+    "react-native-webview": "^9.1.4",
     "react-native-keyboard-aware-scroll-view": "^0.6.0"
   }
 }
