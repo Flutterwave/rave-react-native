@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, Modal, WebView } from 'react-native';
-
+import { Platform, Modal } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export default class VBVSecure extends Component {
   constructor(props) {

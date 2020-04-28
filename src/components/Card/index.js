@@ -9,9 +9,10 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   Image,
-  Platform,
-  WebView
+  Platform
 } from "react-native";
+
+import { WebView } from 'react-native-webview';
 
 //Scrollable view Library
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
